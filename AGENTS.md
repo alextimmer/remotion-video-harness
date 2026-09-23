@@ -609,6 +609,13 @@ rework, one message of questions is not.
 - `docs/research.md` was dropped: this decisions log records where each adopted external idea lives.
 - The client repository is published as it is (private); it gained a README stating that it only installs inside the harness checkout.
 
+## 2026-09-23: Remotes, first pushes, license [Claude Code]
+- The harness is published to a public GitHub repository under the user's personal account: branch `main` (one commit) and tag `v0.6.0` only, pushed by hand-over from the host session. `private/*` branches and the old tags stay local for good; never push with `--all`, `--mirror` or `--tags` here.
+- The "merge `restructure` into `main`" question is closed by the orphan-commit publication: `restructure` lives on as `private/history`; there is nothing left to merge.
+- License: Apache License 2.0 (`LICENSE`, copyright the author). Chosen over MIT for the explicit patent grant, the no-trademark clause and the notice requirement on modified files; still fully permissive. It covers the harness only; Remotion and third-party assets keep their own terms (README, "License").
+- The architecture design document is not published; it lives in the git-ignored `docs/local/` together with the migration plan. Public rules and logs refer to "the original plan" instead.
+- Client repositories are pushed separately to private remotes, with the noreply identity; the first one went up the same day.
+
 
 # Harness learnings (technical gotchas)
 
@@ -693,8 +700,6 @@ live in the client's `agents/rules/85-open-decisions.md`.
 | 2026-09-21 | Replace the hand-placed globe coastlines with Natural Earth 110m (public domain)? | Same `[lat, lon][]` format, drop-in; more accurate continents; slight visual change to reels using the globe. | Keep the hand-placed data, provenance stated in the file header. | When accuracy matters for a reel |
 | 2026-09-21 | Should the format templates' starter `MainComp` wrap `<VisualsThemeProvider>`? | (a) Keep unthemed: blue defaults are a visible "not themed yet" signal. (b) Wire the skeleton theme in the template for a themed first render. | (a) — new projects render defaults until the client theme is wired in a reel. | Next new client |
 | 2026-09-18 | Publish `@harness/visuals` to a registry? | Only worthwhile once a second person or machine must consume it without the harness checkout. | `file:` link inside the harness. | Second consumer |
-| 2026-09-18 | Remotes and first pushes for the harness and each client repo | Per repository, when it is declared done. Identity per remote: noreply GitHub address by default; ask before a work address on an internal remote. | Local commits and tags only; no remotes configured. | Repository declared done |
-| 2026-09-18 | Merge `restructure` into `main` | After the migration completes (Phase 8). `heritage` keeps the pre-restructuring state. | Work on `restructure`. | End of migration |
 | 2026-09-21 | Default local Piper voice for draft voiceovers | Samples in `out/voice-samples/`: `de_DE-thorsten-high` (male, best quality), `de_DE-kerstin-low` and `de_DE-ramona-low` (female, lower quality). The first line of `assets/voices/piper-voices.txt` is the default; changing it means one line + rebuild. | `de_DE-thorsten-high`. | Before the first voiced delivery |
 | 2026-09-21 | Which cloud TTS adapters to add, and when | Providers are plugins (`packages/pipeline/voiceover/providers/`); the ElevenLabs adapter ships untested until a key exists. Others (OpenAI, Azure, Google) are one file each. Local cloning models need a licence check each (several are non-commercial). | Piper only; a missing key fails loudly with the free fallback named. | When a key or a cloning need appears |
 | 2026-09-21 | Music sourcing and licensing for `assets/music/` | Royalty-free library vs. commissioned vs. generated; license terms must permit paid social advertising. | None — user 2026-09-23: no music for now; reels ship voice-only or silent, `<MusicBed>` stays available. | When the user wants music |

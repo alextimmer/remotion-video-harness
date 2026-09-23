@@ -71,3 +71,10 @@
 - The harness history began with the client's content (baseline commit, 184 files) and carried client words for twelve more commits until Phase 6. Publishing that history would break the layer rule, and rewriting words out of commits cannot remove whole reels. Decision with the user: the public `main` is a single orphan commit of the clean tree, tagged `v0.6.0`; the full history stays local on `private/history` (the old `restructure`), `private/baseline` (the old `main`) and `private/heritage`, which are never pushed. The old tags `v0.1.0`–`v0.5.1` point into private history and stay local; the session logs record every phase.
 - `docs/research.md` was dropped: this decisions log records where each adopted external idea lives.
 - The client repository is published as it is (private); it gained a README stating that it only installs inside the harness checkout.
+
+## 2026-09-23: Remotes, first pushes, license [Claude Code]
+- The harness is published to a public GitHub repository under the user's personal account: branch `main` (one commit) and tag `v0.6.0` only, pushed by hand-over from the host session. `private/*` branches and the old tags stay local for good; never push with `--all`, `--mirror` or `--tags` here.
+- The "merge `restructure` into `main`" question is closed by the orphan-commit publication: `restructure` lives on as `private/history`; there is nothing left to merge.
+- License: Apache License 2.0 (`LICENSE`, copyright the author). Chosen over MIT for the explicit patent grant, the no-trademark clause and the notice requirement on modified files; still fully permissive. It covers the harness only; Remotion and third-party assets keep their own terms (README, "License").
+- The architecture design document is not published; it lives in the git-ignored `docs/local/` together with the migration plan. Public rules and logs refer to "the original plan" instead.
+- Client repositories are pushed separately to private remotes, with the noreply identity; the first one went up the same day.

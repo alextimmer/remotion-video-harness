@@ -72,3 +72,8 @@ Not included in the generated AGENTS.md. Read when history is needed.
 ## 2026-09-23: Publish preparation [Claude Code]
 1. README: from-zero Windows setup (WSL 2, Docker Desktop, Git, VS Code, Dev Containers, links checked), "two kinds of repository" guidance (harness is upstream, client repos are yours), what lives where, troubleshooting. HOWTO points to it. Client repository got a README.
 2. History audit before publishing: authors are the noreply identity everywhere, no secrets, but the harness history carries client content up to Phase 6 → public `main` is an orphan commit of the clean tree (`v0.6.0`); private branches keep the history locally. `docs/research.md` removed (redundant with the decisions log). Template installs reduced to insta-reel.
+
+## 2026-09-23: Publication from the host [Claude Code]
+1. Harness pushed to its public remote: `main` (single commit) and `v0.6.0`; the commit was amended twice before the second push — first to add the Apache-2.0 `LICENSE` and a README license section, then to drop the design document and every reference to it (rules, logs, README, HOWTO, ignore file, sync script). Force-pushed; remote verified to hold exactly `main` and `v0.6.0`.
+2. Client repository pushed to its private remote with all tags; privacy verified (anonymous request → 404).
+3. Open-decision rows for remotes and the branch merge moved into the decisions log.
