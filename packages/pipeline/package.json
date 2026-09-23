@@ -1,0 +1,22 @@
+{
+  "name": "@harness/pipeline",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Voiceover, transcription and mastering tools for client reels. Runs from the harness root with Node 22; no build step.",
+  "type": "module",
+  "bin": {
+    "harness-voiceover": "voiceover/voiceover.mjs"
+  },
+  "exports": {
+    "./script": {
+      "types": "./script.d.ts",
+      "default": "./script.mjs"
+    }
+  },
+  "scripts": {
+    "test": "node --test voiceover/"
+  },
+  "dependencies": {
+    "@remotion/install-whisper-cpp": "4.0.526"
+  }
+}

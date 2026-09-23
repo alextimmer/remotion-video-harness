@@ -1,0 +1,6 @@
+# Piper voices baked into the devcontainer image, one per line:
+#   <lang>/<locale>/<speaker>/<quality>/<file-stem>
+# Source: https://huggingface.co/rhasspy/piper-voices (MIT). Add a line and
+# rebuild the image to add a voice. The pipeline's default is the first line.
+de/de_DE/thorsten/high/de_DE-thorsten-high
+de/de_DE/kerstin/low/de_DE-kerstin-low

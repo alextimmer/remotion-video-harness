@@ -1,0 +1,9 @@
+# Project manifest. Copy to projects.yaml (git-ignored) and fill in.
+# scripts/clone-project.sh reads projects.yaml to restore client repositories
+# into projects/<name>/. Keep the flat "- name:" + indented keys format; the
+# parser is a small awk script, not a full YAML parser.
+projects:
+  - name: example-client-videos
+    remote: git@github.com:you/example-client-videos.git
+    branch: main
+    notes: replace with the real client repository

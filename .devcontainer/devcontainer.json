@@ -1,0 +1,31 @@
+{
+  "name": "Remotion video harness",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Remotion Studio",
+      "onAutoForward": "notify"
+    }
+  },
+  "mounts": [
+    "source=remotion-harness-claude-home,target=/home/node/.claude,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "node",
+  "postCreateCommand": "sudo chown -R node:node /home/node/.claude || echo 'WARNING: could not fix ownership of /home/node/.claude; Claude Code login will fail with EACCES'; bash .devcontainer/post-create.sh"
+}

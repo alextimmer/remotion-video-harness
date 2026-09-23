@@ -1,0 +1,35 @@
+# Render without VS Code. Uses the same image as the devcontainer.
+#   docker compose run --rm render <client> <CompositionId> [name]
+#   docker compose run --rm verify <client> <CompositionId> <frame> [frame ...]
+#   docker compose run --rm shell            (interactive bash in the harness)
+services:
+  base:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    image: remotion-harness:local
+    user: node
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - remotion-harness-claude-home:/home/node/.claude
+    env_file:
+      - path: .env
+        required: false
+
+  render:
+    extends: base
+    entrypoint: ["bash", "scripts/render.sh"]
+
+  verify:
+    extends: base
+    entrypoint: ["bash", "scripts/verify.sh"]
+
+  shell:
+    extends: base
+    entrypoint: ["bash"]
+    stdin_open: true
+    tty: true
+
+volumes:
+  remotion-harness-claude-home:

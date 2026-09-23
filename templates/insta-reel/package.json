@@ -1,0 +1,28 @@
+{
+  "name": "PROJECT_NAME",
+  "version": "1.0.0",
+  "private": true,
+  "harnessVersion": "0.1.0",
+  "scripts": {
+    "dev": "remotion studio --ipv4",
+    "build": "remotion bundle",
+    "render": "remotion render src/index.ts MainComp out/video.mp4 --overwrite",
+    "still": "remotion still src/index.ts MainComp out/still.png --overwrite"
+  },
+  "dependencies": {
+    "@harness/pipeline": "file:../../packages/pipeline",
+    "@harness/visuals": "file:../../packages/visuals",
+    "@remotion/cli": "4.0.526",
+    "@remotion/google-fonts": "4.0.526",
+    "@remotion/media": "4.0.526",
+    "@remotion/transitions": "4.0.526",
+    "react": "^19",
+    "react-dom": "^19",
+    "remotion": "4.0.526"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

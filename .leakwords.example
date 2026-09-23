@@ -1,0 +1,8 @@
+# Words that must never appear in harness (Layer A) files: client names,
+# products, cities, competitors, brand terms. Copy to .leakwords (git-ignored)
+# and fill in. One per line, case-insensitive substring match. Used by
+# scripts/leak-gate.sh and the Claude Code write hook (.claude/hooks/).
+example-client
+example-product
+example-competitor
+example-city

@@ -1,0 +1,13 @@
+node_modules/
+out/
+dist/
+.remotion/
+deliveries/
+.env
+.env.*
+!.env.example
+CLAUDE.local.md
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+*.log

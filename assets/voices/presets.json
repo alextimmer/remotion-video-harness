@@ -1,0 +1,8 @@
+{
+  "$comment": "Harness voice presets: the free local defaults every project can use without a key. Voices listed here must be baked into the image (piper-voices.txt). Clients define their own voices in src/brand/voices.json (a brand decision) and, per reel, in src/reels/<id>/voices.json; later layers override these. Scripts refer to presets by name only.",
+  "default": "default-de-male",
+  "voices": {
+    "default-de-male": {"provider": "piper", "voiceId": "de_DE-thorsten-high", "language": "de"},
+    "default-de-female": {"provider": "piper", "voiceId": "de_DE-kerstin-low", "language": "de"}
+  }
+}

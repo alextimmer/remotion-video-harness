@@ -1,0 +1,40 @@
+# Dependencies and build output
+node_modules/
+out/
+dist/
+.remotion/
+
+# Deliverables are never versioned
+deliveries/
+
+# Client repositories live here as independent git repos
+projects/
+
+# Local-only configuration and secrets
+.env
+.env.*
+!.env.example
+projects.yaml
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Transient client-specific documents
+docs/local/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+
+# Personal VS Code workspace files (Layer C)
+*.code-workspace
+
+# Agent Skills are installed by post-create.sh (npx remotion skills add), never edited
+.agents/skills/remotion-*/
+.claude/skills
+
+# whisper.cpp build and models, downloaded on first voiceover run
+packages/pipeline/.whisper/
+
+# Leak-gate word list: client words, Layer C (see .leakwords.example)
+.leakwords
